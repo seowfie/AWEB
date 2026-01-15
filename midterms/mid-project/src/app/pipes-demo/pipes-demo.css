@@ -1,0 +1,73 @@
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 40px;
+  background-color: #e0faf1; /* Soft Creamy Pink Background */
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+/* Card Styling for each <div> */
+div {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 350px; /* Limits width to look like cards */
+  box-shadow: 0 8px 24px rgba(214, 162, 183, 0.15);
+  border: 1px solid #fae1e8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Cards */
+div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(214, 162, 183, 0.25);
+}
+
+/* Headers */
+h2, h3 {
+  color: #9c6f8b; /* Muted Mauve */
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #f0d4de; /* Cute dashed divider */
+  font-size: 1.2rem;
+}
+
+/* Text Content */
+p, li {
+  color: #665a60; /* Dark Grey-Purple for readability */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* Specific styling for the Slice Pipe headers to clean them up */
+h4, h5, h6 {
+  color: #b590a3;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 10px 0 5px 0;
+}
+
+/* KeyValue List Items */
+p[ng-reflect-ng-for-of], p {
+  background-color: #fcf6fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* Center text utility */
+div[style*="text-align: center"] {
+  text-align: center;
+}
