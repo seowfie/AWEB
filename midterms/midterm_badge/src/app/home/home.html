@@ -1,0 +1,13 @@
+<h2>Welcome Home</h2>
+
+<h3>Latest Updates</h3>
+<div *ngIf="dataService.posts$ | async as posts; else loading">
+  <div class="cute-card" *ngFor="let post of posts | slice:0:5">
+    <strong style="color: #a7cfff;">{{ post.title | uppercase }}</strong>
+    <p>{{ post.body | truncate:100 }}</p>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading sparkles... ✨</p>
+</ng-template>

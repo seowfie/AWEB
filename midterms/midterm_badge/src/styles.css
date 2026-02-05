@@ -1,0 +1,203 @@
+/* --- CUTE THEME VARIABLES --- */
+:root {
+  --bg-cream: #fdfaf4;
+  --pastel-yellow: #fff4b8;
+  --pastel-blue: #c7e5ff;
+
+  /* NEW: Darker colors for text so it is readable */
+  --text-dark: #5d6576;
+  --heading-blue: #7fa1c3; /* Readable soft blue */
+  --heading-gold: #d4a017; /* Darker gold for text only (not background) */
+  --primary-btn: #a7cfff;
+}
+
+/* --- BASE STYLES --- */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 1.6; /* Adds space between lines of text */
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  background-color: var(--primary-btn);
+  padding: 1.5rem 3rem; /* More spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  box-shadow: 0 4px 0 rgba(167, 207, 255, 0.4);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin-bottom: 40px; /* Pushes content down */
+}
+
+.navbar h1 {
+  margin: 0;
+  color: white;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* More space between links */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+  background-color: #fff;
+  color: var(--heading-blue); /* Blue text on white hover */
+  transform: translateY(-2px);
+}
+
+/* --- MAIN CONTAINER --- */
+.container {
+  max-width: 900px;
+  margin: 0 auto 60px auto; /* Centered with bottom space */
+  background: white;
+  padding: 60px; /* Big comfy padding */
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(167, 207, 255, 0.25);
+  border: 4px solid var(--pastel-blue);
+}
+
+/* --- HEADINGS --- */
+h2 {
+  color: var(--heading-blue);
+  font-weight: 800;
+  font-size: 2rem;
+  border-bottom: 4px dashed var(--pastel-yellow);
+  padding-bottom: 15px;
+  margin-top: 0;
+  margin-bottom: 30px; /* Space after title */
+}
+
+h3 {
+  /* CHANGED: Darker gold/brown instead of bright yellow */
+  color: var(--heading-gold);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+/* --- CARDS --- */
+.cute-card {
+  background-color: #fff; /* Start white */
+  border: 3px solid var(--pastel-yellow); /* Yellow Border */
+  border-radius: 25px;
+  padding: 25px; /* More internal space */
+  margin-bottom: 25px; /* Space between cards */
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.cute-card:hover {
+  transform: scale(1.02);
+  background-color: var(--bg-cream); /* Slight cream tint on hover */
+}
+
+/* Fix for specific text inside cards */
+.cute-card h3 {
+  margin-top: 0;
+  color: var(--heading-blue); /* Title is blue */
+}
+
+.cute-card p {
+  color: var(--text-dark); /* Body text is dark grey */
+  margin-bottom: 0;
+}
+
+/* --- FORMS & INPUTS --- */
+/* Added spacing wrapper for form elements */
+form > div {
+  margin-bottom: 25px !important;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-blue);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px; /* Larger click area */
+  border: 3px solid var(--pastel-blue);
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: #f8fbff; /* Very light blue tint */
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--heading-blue);
+  background-color: #fff;
+}
+
+/* --- BUTTONS --- */
+button {
+  background-color: var(--primary-btn);
+  color: white;
+  border: none;
+  padding: 15px 35px; /* Big button */
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #8ebcf0;
+  transition: transform 0.1s;
+  display: block;
+  width: 100%; /* Full width button looks better on mobile/cards */
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+/* --- UTILS --- */
+.preview-box {
+  background-color: var(--pastel-blue);
+  padding: 30px;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.preview-item {
+  background: white;
+  color: var(--text-dark);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Grid fix for Contact Page */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px; /* Big gap between form and preview */
+}

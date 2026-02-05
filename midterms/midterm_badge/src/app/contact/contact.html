@@ -1,0 +1,30 @@
+<h2>Contact Us</h2>
+
+<div class="grid-2">
+
+  <form>
+    <div> <label>Name</label>
+      <input type="text" [(ngModel)]="contactName" name="name" placeholder="Your name">
+    </div>
+
+    <div>
+      <label>Message</label>
+      <textarea [(ngModel)]="contactMessage" name="msg" rows="5" placeholder="Type a note..."></textarea>
+    </div>
+
+    <button type="button" (click)="submit()">Send Love 💖</button>
+  </form>
+
+  <div class="preview-box">
+    <h3 style="color: white; margin-top: 0;">Preview</h3>
+
+    <div class="preview-item">
+      <strong>Name:</strong> {{ contactName | uppercase }}
+    </div>
+
+    <div class="preview-item">
+      <strong>Message:</strong> {{ contactMessage }}
+    </div>
+  </div>
+
+</div>
