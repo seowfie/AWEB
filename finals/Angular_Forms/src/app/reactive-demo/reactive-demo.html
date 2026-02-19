@@ -1,0 +1,86 @@
+<div class="card">
+  <h2>Reactive Demo</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" class="input" placeholder="Enter username" formControlName="username" />
+      @if (isInvalid('username')) {
+      <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" class="input" type="email" placeholder="Enter email" formControlName="email" />
+      @if (isInvalid('email')) {
+      <small class="error">Enter a valid email</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" class="input" type="password" placeholder="Enter password" formControlName="password" />
+      @if (isInvalid('password')) {
+      <small class="error">Password: 8+ with upper, lower, number</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select id="role" class="input" formControlName="role">
+        @for (r of roles; track r) {
+        <option [value]="r">{{ r }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="radio-label">Gender</label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" formControlName="gender" value="Male"> Male
+        </label>
+        <label class="radio-option">
+          <input type="radio" formControlName="gender" value="Female"> Female
+        </label>
+      </div>
+      @if (isInvalid('gender')) {
+      <small class="error">Gender is required</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" class="input" formControlName="status">
+        <option value="" disabled selected>Select Status</option>
+        @for (s of statuses; track s) {
+        <option [value]="s">{{ s }}</option>
+        }
+      </select>
+      @if (isInvalid('status')) {
+      <small class="error">Status is required</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="comments">Comments (Notes)</label>
+      <textarea id="comments" class="input textarea" formControlName="comments" placeholder="Add your notes here..." rows="3"></textarea>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+
+    @if (submittedData) {
+    <div class="result-box">
+      <h3>Submitted Data</h3>
+      <p><strong>Username:</strong> {{ submittedData.username }}</p>
+      <p><strong>Email:</strong> {{ submittedData.email }}</p>
+      <p><strong>Role:</strong> {{ submittedData.role }}</p>
+      <p><strong>Gender:</strong> {{ submittedData.gender }}</p>
+      <p><strong>Status:</strong> {{ submittedData.status }}</p>
+      <p><strong>Comments:</strong> {{ submittedData.comments }}</p>
+    </div>
+    }
+</div>

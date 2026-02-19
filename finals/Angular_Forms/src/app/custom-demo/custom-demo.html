@@ -1,0 +1,89 @@
+<div class="card">
+  <h2>College Enrollment</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" class="input" placeholder="Enter username" formControlName="username" />
+      @if (isInvalid('username')) {
+      <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" class="input" type="email" placeholder="Enter email" formControlName="email" />
+      @if (isInvalid('email')) {
+      <small class="error">Enter a valid email</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" class="input" type="password" placeholder="Enter password" formControlName="password" />
+      @if (isInvalid('password')) {
+      <small class="error">Password: 8+ with upper, lower, number</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="role">Scholar</label>
+      <select id="role" class="input" formControlName="role">
+        @for (r of roles; track r) {
+        <option [value]="r">{{ r }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="radio-label">Student Type</label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" formControlName="studentType" value="Returning"> Returning
+        </label>
+        <label class="radio-option">
+          <input type="radio" formControlName="studentType" value="Transferee"> Transferee
+        </label>
+      </div>
+      @if (isInvalid('studentType')) {
+      <small class="error">Student Type is required</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="department">Department</label>
+      <select id="department" class="input" formControlName="department">
+        <option value="" disabled selected>Select Department</option>
+        @for (d of departments; track d) {
+        <option [value]="d">{{ d }}</option>
+        }
+      </select>
+      @if (isInvalid('department')) {
+      <small class="error">Department is required</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="major">Major</label>
+      <input id="major" class="input" placeholder="e.g. BS Computer Science" formControlName="major" />
+      @if (isInvalid('major')) {
+      <small class="error">Major is required</small>
+      }
+    </div>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit Enrollment</button>
+  </form>
+
+  @if (submittedData) {
+  <div class="result-box">
+    <h3>Submitted Enrollment</h3>
+    <p><strong>Username:</strong> {{ submittedData.username }}</p>
+    <p><strong>Email:</strong> {{ submittedData.email }}</p>
+    <p><strong>Role:</strong> {{ submittedData.role }}</p>
+    <p><strong>Type:</strong> {{ submittedData.studentType }}</p>
+    <p><strong>Department:</strong> {{ submittedData.department }}</p>
+    <p><strong>Major:</strong> {{ submittedData.major }}</p>
+  </div>
+  }
+</div>

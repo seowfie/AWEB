@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Define Palette Variables for easy tweaking */
+:root {
+  --prominent-pink: #f0b3c0;
+  --accent-brown: #795548;
+  --dark-brown-hover: #5d4037;
+  --input-bg: #ffffff;
+  --error-red: #d32f2f;
+}
+
+.card {
+  font-family: 'Poppins', sans-serif;
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fdd4dd;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(240, 179, 192, 0.5);
+  border: none;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: var(--accent-brown);
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Grouping for spacing */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels - Brown Accent */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #795548;
+  font-size: 0.95rem;
+}
+
+/* Input Fields & Textarea - White layout */
+.input {
+  width: 100%;
+  padding: 9px 15px;
+  border: 2px solid var(--input-bg);
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  box-sizing: border-box;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Specific styling for Textarea */
+textarea.input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Input Focus State - Brown highlight */
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(121, 85, 72, 0.2); /* Subtle brown glow */
+}
+
+/* Select Dropdown Arrow - Changed color to Brown (%23795548) */
+select.input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23795548' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px;
+}
+
+/* Radio Button Grouping */
+.radio-group {
+  display: flex;
+  gap: 25px;
+  padding-top: 5px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 400; /* Reset weight for options */
+}
+
+/* Custom accent color for radio buttons - Brown */
+input[type="radio"] {
+  accent-color: var(--accent-brown);
+  transform: scale(1.3);
+}
+
+/* Submit Button - Brown Accent */
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #d4a596; /* Brown background */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #5d4037;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(93, 64, 55, 0.3);
+}
+
+.btn:disabled {
+  background-color: #bcaaa4; /* Light brown for disabled state */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Error Messages */
+.error {
+  display: block;
+  color: var(--error-red);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.result-box {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #fffbd1;
+  border: 2px dashed #ffaa65;
+  border-radius: 8px;
+  color: #444;
+  font-size: 0.8rem;
+}
+
+.result-box p {
+  margin: 0 0 5px 0;
+}

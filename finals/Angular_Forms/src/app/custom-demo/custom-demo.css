@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Define Palette Variables for easy tweaking */
+:root {
+  /* Prominent Color: Light Blue */
+  --prominent-blue: #e1f5fe;
+  --prominent-blue-darker: #b3e5fc;
+
+  /* Accent Color: Pink */
+  --accent-pink: #ec407a;
+  --accent-pink-hover: #d81b60;
+
+  /* Text Colors */
+  --text-label: #880e4f; /* Dark Pink/Purple for readability */
+  --input-bg: #ffffff;
+  --error-red: #d32f2f;
+}
+
+/* Added Body styling to make it "fit the screen" better */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #b3e5fc; /* Darker blue background for page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.card {
+  font-family: 'Poppins', sans-serif;
+  width: 90%; /* Takes up 90% of screen width on mobile */
+  max-width: 600px; /* Wider max-width to fit screen better */
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #b3e5fc; /* Light Blue Card */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(2, 119, 189, 0.2); /* Blue-ish shadow */
+  border: 1px solid white;
+  color:#444;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: var(--accent-pink); /* Pink Title */
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Grouping for spacing */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels - Dark Pink Accent */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-label);
+  font-size: 0.95rem;
+}
+
+/* Input Fields & Textarea - White layout */
+.input {
+  width: 100%;
+  padding: 12px 15px; /* Slightly larger padding */
+  border: 2px solid var(--input-bg);
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  box-sizing: border-box;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Specific styling for Textarea */
+textarea.input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Input Focus State - Pink highlight */
+.input:focus {
+  outline: none;
+  border-color: #ec407a;
+  box-shadow: 0 0 0 4px rgba(236, 64, 122, 0.2); /* Subtle Pink glow */
+}
+
+/* Select Dropdown Arrow - Changed color to Pink (%23ec407a) */
+select.input {
+  cursor: pointer;
+  appearance: none;
+  /* Updated SVG stroke to match Accent Pink */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ec407a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px;
+}
+
+/* Radio Button Grouping */
+.radio-group {
+  display: flex;
+  gap: 25px;
+  padding-top: 5px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--text-label);
+}
+
+/* Custom accent color for radio buttons - Pink */
+input[type="radio"] {
+  accent-color: var(--accent-pink);
+  transform: scale(1.3);
+}
+
+/* Submit Button - Pink Accent */
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.3);
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #f8bbd0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(236, 64, 122, 0.4);
+}
+
+.btn:disabled {
+  background-color: #f8bbd0; /* Light pink for disabled state */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Error Messages */
+.error {
+  display: block;
+  color: var(--error-red);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 2px dashed #ec407a;
+  border-radius: 12px;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.result-box p {
+  margin: 0 0 5px 0;
+}

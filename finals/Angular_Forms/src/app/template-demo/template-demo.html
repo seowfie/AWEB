@@ -1,0 +1,112 @@
+
+ <div class="form-container">
+  <h2>{{ title }}</h2>
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        required
+        placeholder="Enter username"
+        #usernameRef="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        email
+        placeholder="Enter email"
+        #emailRef="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        minlength="8"
+        placeholder="Enter password"
+        #passRef="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select
+        class="form-control"
+        id="role"
+        name="role"
+        [(ngModel)]="role"
+        required>
+        <option value="" disabled selected>Select role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+        <option value="guest">Guest</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="gender" [(ngModel)]="gender" value="Male" required> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" [(ngModel)]="gender" value="Female" required> Female
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select class="form-control" name="status" [(ngModel)]="status" required>
+        <option value="" disabled selected>Select Status</option>
+        <option value="Permanent">Permanent</option>
+        <option value="Probationary">Probationary</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="comments">Comments (Notes)</label>
+      <textarea
+        class="form-control"
+        name="comments"
+        [(ngModel)]="comments"
+        rows="3"
+        placeholder="Add your notes here..."></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="btn-submit"
+      [disabled]="!userForm.form.valid">
+      Submit
+    </button>
+
+  </form>
+
+  <div *ngIf="submitted" class="result-box">
+    <h3>Data Submitted:</h3>
+    <p><strong>Username:</strong> {{ username }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Role:</strong> {{ role }}</p>
+    <p><strong>Gender:</strong> {{ gender }}</p>
+    <p><strong>Status:</strong> {{ status }}</p>
+    <p><strong>Comments:</strong> {{ comments }}</p>
+  </div>
+</div>
